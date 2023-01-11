@@ -4,11 +4,11 @@ public class Runner
 {
     public static void main(String[] args)
     {
-        String[] words = {"hello", "hola", "hi", "what's up?"};
-        ArrayAlgorithms.makeUppercase(words);
+        int[] nums = {5, 1, 3, 4, 7};
+        ArrayAlgorithms.shiftLeftModify(nums);
 
-        // original word list IS modified
-        System.out.println(Arrays.toString(words));
-
+        // original array IS modified
+        System.out.println(Arrays.toString(nums));
     }
+
 }
