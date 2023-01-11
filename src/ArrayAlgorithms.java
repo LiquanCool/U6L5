@@ -188,9 +188,9 @@ public class ArrayAlgorithms {
     {
         int[] intArray = new int[numList.length];
         intArray[intArray.length-1] = numList[0];
-        for (int i = 1;i<numList.length;i++)
+        for (int i = 0;i<numList.length-1;i++)
         {
-            intArray[i-1] = numList[i];
+            intArray[i] = numList[i+1];
         }
         return intArray;
     }
