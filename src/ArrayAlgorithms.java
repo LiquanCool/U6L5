@@ -206,5 +206,53 @@ public class ArrayAlgorithms {
             temp = temp2;
         }
     }
+    public static void shiftNumLeftModify(int[] numList, int shiftNum)
+    {
+        int[] nums = new int[numList.length];
+        for (int i = numList.length-1;i>=0;i--)
+        {
+            int difference = i-shiftNum;
+            difference = difference%numList.length;
+            if (difference<0)
+            {
+                nums[nums.length-Math.abs(difference)] = numList[i];
+            }
+            else
+            {
+                nums[difference] = numList[i];
+            }
+        }
+        for (int i = 0;i<numList.length;i++)
+        {
+            numList[i]=nums[i];
+        }
+    }
+    public static void shiftNumRightModify(int[] numList, int shiftNum)
+    {
+        shiftNum = numList.length-shiftNum;
+        ArrayAlgorithms.shiftNumLeftModify(numList,shiftNum);
+    }
+    public static int[] reverse(int[] numList)
+    {
+        int[] reverseNums = new int[numList.length];
+        for (int i=0;i<numList.length;i++)
+        {
+            reverseNums[reverseNums.length-i-1]=numList[i];
+        }
+        return reverseNums;
+    }
+    public static void reverseModify(int[] numList)
+    {
+        int temp = 0;
+        int temp2 = 0;
+        for (int i=0;i<(int)((double)numList.length/2);i++)
+        {
+            temp=numList[numList.length-1-i];
+            temp2=numList[i];
+            numList[i]=temp;
+            numList[numList.length-1-i]=temp2;
+        }
+    }
+
 
 }
